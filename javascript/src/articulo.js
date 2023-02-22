@@ -26,12 +26,17 @@ class Conjured extends Articulo {
     super(name, sellIn, quality);
     // console.log("alquie cre un conjured")
   }
+  minmaxQuality(calidad){
+    const calidadMin0 = Math.max(0, calidad) ;
+    const calidadMax50 = Math.min(50, calidadMin0) ;
+    return calidadMax50
+  }
   updateQuality(){
     this.sellIn = this.sellIn - 1 ;
     if (this.sellIn < 0){
-      this.quality = this.quality - 4
+      this.quality = this.minmaxQuality(this.quality - 4)
     }else {
-      this.quality = this.quality - 2
+      this.quality = this.minmaxQuality(this.quality - 2)
     }
   }
 }

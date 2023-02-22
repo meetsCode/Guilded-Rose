@@ -29,6 +29,12 @@ el grupo de SoftwareCraftersMurcia.
 
 
 ## En este commit
+Veo en el test que el mínimo de calidad de la clase Conjured no se respeta.
+Corrijo ese error poniendo una función que calcule el mínimo.
+También encuentro un error en el fichero de test que le falta un espacio al final.
+
+
+## [js-2023-luis-v2 7031aae] corregido el test y creado la clase Item por defecto
 Busco pasar test a verde. Debo hacer que Articulo, ante la duda cree la clase Item por defecto.
 Para ello debo de crear un nuevo inicializador de la clase. Lo haré con una función de clase
 que JS se llaman static que llamaré nuevo.
