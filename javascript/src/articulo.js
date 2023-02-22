@@ -3,8 +3,9 @@ const {Item} = require("./item") ;
 
 class Articulo extends Item {
   static nuevo(name, sellIn, quality){
-    if (name === 'nadena'){
-      return new Articulo(name, sellIn, quality)
+    if (/Conjured/i.test(name) ){
+ //     if (name === 'Conjured Mana Cake'){
+      return new Conjured(name, sellIn, quality)
     } else {
       return new Item(name, sellIn, quality)
     }
@@ -20,29 +21,20 @@ class Articulo extends Item {
 }
 
 
-class Estandar extends Articulo {
+class Conjured extends Articulo {
   constructor(name, sellIn, quality){
     super(name, sellIn, quality);
-  }
-  set quality(valor){
-      if (valor === '') {
-        throw new Error(`name field of User cannot be empty`);
-      }
-      this.quality = valor;
-  }
-  get quality(){
-    return this.quality;
+    // console.log("alquie cre un conjured")
   }
   updateQuality(){
     this.sellIn = this.sellIn - 1 ;
     if (this.sellIn < 0){
-      this.setQuality(this.quality - 2)
+      this.quality = this.quality - 4
     }else {
-      this.setQuality(this.quality - 1)
+      this.quality = this.quality - 2
     }
-
   }
 }
 
 
-  module.exports = {Articulo , Estandar}
+module.exports = {Articulo , Conjured}
