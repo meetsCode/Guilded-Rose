@@ -2,19 +2,8 @@ const {Item} = require("./item") ;
 
 
 class Articulo extends Item {
-  constructor(name, sellIn, quality){
-    super(name, sellIn, quality);
-  }
-  toString(){
-    //return return "nombre,sellIn,quality>>>>" + this.name + " " + this.sellIn + " " +  this.quality + " " +  this.type
-    console.log ('Neo, be aware of %o', this)
-    return `nombre>>${this.name} , sellIn>>${this.name} , quality>>>${this.name} `
-  }
-}
-
-class Articul extends Item {
   static nuevo(name, sellIn, quality){
-    if (name === ''){
+    if (name === 'nadena'){
       return new Articulo(name, sellIn, quality)
     } else {
       return new Item(name, sellIn, quality)
